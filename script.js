@@ -62,3 +62,10 @@ function roundTally(roundTie, computerScore, playerScore){
 //console.log(game())
 //console.log(roundTally(roundTie,computerScore,playerScore))
 //console.log(computerScore,playerScore,roundTie)
+
+function fadeIn (){
+  const result = document.querySelectorAll('#fadeIn');
+  result.forEach(() => {
+    
+  });
+} 
