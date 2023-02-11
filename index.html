@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
-  <body onload="fadeIn()"></body>
+  <!-- <body onload="fadeIn()"></body> -->
   <title>Rock, paper, scissors</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="./script.js"></script>
 </head>
 <body>
-  <p id = "fadeIn"> The rules are simple... </p>
-  <p id = "fadeIn"> Best 3 of 5 wins... </p>
-  <p id = "fadeIn"> The fate of humanity lies in your hands... </p>
-  <p id = "fadeIn"> Choose Wisely... </p>
+  <div id="fade-in">
+    <p>The rules are simple...</p>
+    <p>Best 3 of 5 wins...</p>
+    <p>The fate of humanity lies in your hands...</p>
+    <p>Choose Wisely...</p>
+  </div>
+  <div id="selection-container">
+    <button class = "btn">Rock</button>
+    <button class = "btn">Paper</button>
+    <button class = "btn">Scissors</button>
+  </div>
+  <script src="./script.js"></script>
 </body>
 </html>
