@@ -31,7 +31,17 @@ html {
     display: flex;
     justify-content: space-around;
 }
-.score-box {
+.player-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: buttonface;
+    border: 2px solid;
+    border-color: rgba(131, 50, 50, 0.911);
+    width: 200px;
+    height: 200px;
+}
+.computer-box {
     display: flex;
     align-items: center;
     justify-content: center;

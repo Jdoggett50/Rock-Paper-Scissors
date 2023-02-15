@@ -42,15 +42,27 @@ function playRound (playerSelection,computerSelection){
 
 
 //initialize round loop counter to 5
+//make infinite loop until first to 3 wins
 function game(playerSelection){
-  for (let i = 0; i < 5; i++){
+  while (false){
+    if (playerScore === 3 && playerScore > computerScore){
+      return alert('player has won!')
+    } else {
+      return alert ('computer has won!')
+    }
     playerSelection = ''
-    computerSelection = getComputerChoice ()
-    playRound(playerSelection.toLowerCase(),computerSelection)
+    i++
   }
-}  
+}
+// function game(playerSelection){
+//   for (let i = 0; i < 5; i++){
+//     playerSelection = ''
+//     computerSelection = getComputerChoice ()
+//     playRound(playerSelection.toLowerCase(),computerSelection)
+//   }
+// }  
 
-function roundTally(roundTie, computerScore, playerScore){
+function roundTally(computerScore, playerScore){
   if (computerScore > playerScore){
     return alert('computer has won!')
   }
@@ -60,19 +72,14 @@ function roundTally(roundTie, computerScore, playerScore){
 }
 
 //target the buttons and make them each individually selectable
-const div = document.querySelector('div'
-);
-const body = document.querySelector('body');
-const btn = document.querySelectorAll('.btn');
 const btnContainer = document.querySelector('#selection-container');
 
-console.log(btn[1])
+//add player selection to playerScore box
+function getSelection(evt) {
+  const playerBox = document.querySelector(".player-box")
+  const span = document.createElement("span")
+  span.textContent = `${evt.target.dataset.select}`;
+  playerBox.appendChild(span)
+}
 
-btn.forEach((element) => {
-  element.addEventListener('click', (evt) => {
-    evt.target.style.backgroundColor = 'green';
-    
-})})
-
-let playerSelection = ''
-console.log(playerSelection)
+btnContainer.addEventListener('click', getSelection)
