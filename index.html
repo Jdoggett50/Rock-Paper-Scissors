@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width" />
   <!-- <body onload="fadeIn()"></body> -->
   <title>Rock, paper, scissors</title>
+  <script src="./script.js" defer></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,10 +16,25 @@
     <p>Choose Wisely...</p>
   </div>
   <div id="selection-container">
-    <button class = "btn">Rock</button>
-    <button class = "btn">Paper</button>
-    <button class = "btn">Scissors</button>
+    <button class = "btn" data-select ='rock'>Rock</button>
+    <button class = "btn" data-select ='paper'>Paper</button>
+    <button class = "btn" data-select ='scissors'>Scissors</button>
   </div>
-  <script src="./script.js"></script>
+  <div id ="score-title">
+    <div class="box-title">
+      <h2>Player Choice</h2>
+    </div>
+    <div class="box-title">
+      <h2>Computer Choice</h2>
+    </div>
+  </div>
+  <div id="score-container">
+    <div class="score-box">
+      <span> js content</span>
+    </div>
+    <div class="score-box">
+      <span> js content</span>
+    </div>
+  </div>
 </body>
 </html>

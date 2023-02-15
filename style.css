@@ -1,20 +1,43 @@
 html {
-    background-color: rgb(245, 245, 220);
+    background-color: rgba(7, 6, 6, 0.911);
 }
 #selection-container {
     display: flex;
     justify-content: space-evenly;
+    margin: 0px 400px;
 }
 #fade-in > p{
-    color: rgba(131, 50, 50, 0.911);
-    text-shadow: -1px 2px rgb(196, 117, 44);
+    color: rgb(102, 49, 138);
+    text-shadow: -1px 2px rgba(228, 150, 49, 0.904);
     font-size: xx-large;
     text-align: center;
 }
-.btn{
+.btn {
     font-size: 40px;
     color: rgba(131, 50, 50, 0.911);
 }
-/* #select-btn {
-    
-} */
+#score-title {
+    display: flex;
+    justify-content: space-around;
+}
+.box-title{
+    color: rgb(102, 49, 138);
+    text-shadow: -1px 2px rgba(228, 150, 49, 0.904);
+    width: 206px;
+    text-align: center;
+    margin-top: 50px;
+}
+#score-container {
+    display: flex;
+    justify-content: space-around;
+}
+.score-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: buttonface;
+    border: 2px solid;
+    border-color: rgba(131, 50, 50, 0.911);
+    width: 200px;
+    height: 200px;
+}
