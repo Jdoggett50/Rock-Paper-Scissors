@@ -72,14 +72,11 @@ function roundTally(computerScore, playerScore){
 }
 
 //target the buttons and make them each individually selectable
-const btnContainer = document.querySelector('#selection-container');
-
-//add player selection to playerScore box
-function getSelection(evt) {
-  const playerBox = document.querySelector(".player-box")
-  const span = document.createElement("span")
-  span.textContent = `${evt.target.dataset.select}`;
-  playerBox.appendChild(span)
-}
+const btnContainer = document.querySelector('#btn-container');
 
 btnContainer.addEventListener('click', getSelection)
+
+function getSelection (evt) {
+  const span = document.querySelector('span')
+  span.textContent = `Player Selection: ${evt.target.dataset.select}`;
+}

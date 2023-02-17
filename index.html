@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
-  <!-- <body onload="fadeIn()"></body> -->
   <title>Rock, paper, scissors</title>
   <script src="./script.js" defer></script>
   <link rel="stylesheet" href="style.css" />
@@ -15,7 +14,7 @@
     <p>The fate of humanity lies in your hands...</p>
     <p>Choose Wisely...</p>
   </div>
-  <div id="selection-container">
+  <div id="btn-container">
     <button class = "btn" data-select ='rock'>Rock</button>
     <button class = "btn" data-select ='paper'>Paper</button>
     <button class = "btn" data-select ='scissors'>Scissors</button>
@@ -29,10 +28,19 @@
     </div>
   </div>
   <div id="score-container">
-    <div class="player-box">
+    <div class="player-score">
+    
     </div>
-    <div class="computer-box">
+    <div class="computer-score">
       
+    </div>
+  </div>
+  <div id ="selection-box">
+    <div class ="player-selection">
+      <span> </span>
+    </div>
+    <div class="computer-selection">
+      <span> </span>
     </div>
   </div>
 </body>

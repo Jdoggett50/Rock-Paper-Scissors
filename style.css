@@ -1,7 +1,7 @@
 html {
     background-color: rgba(7, 6, 6, 0.911);
 }
-#selection-container {
+#btn-container {
     display: flex;
     justify-content: space-evenly;
     margin: 0px 400px;
@@ -31,23 +31,51 @@ html {
     display: flex;
     justify-content: space-around;
 }
-.player-box {
+.player-score {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-color: buttonface;
     border: 2px solid;
     border-color: rgba(131, 50, 50, 0.911);
     width: 200px;
     height: 200px;
 }
-.computer-box {
+.computer-score {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-color: buttonface;
     border: 2px solid;
     border-color: rgba(131, 50, 50, 0.911);
     width: 200px;
     height: 200px;
 }
+
+#selection-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    background-color: buttonface;
+    border: 2px solid;
+    border-color: rgba(131, 50, 50, 0.911);
+}
+.player-selection {
+    font-size: large;
+    margin: auto;
+    color: rgba(131, 50, 50, 0.911);
+}
+.computer-selection {
+    font-size: large;
+    margin: auto;
+    color: rgba(131, 50, 50, 0.911);
+}
+ 
