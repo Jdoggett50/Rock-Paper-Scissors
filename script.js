@@ -3,57 +3,6 @@ let roundTie = 0;
 let playerScore = 0;
 let computerScore = 0;
 
-//function to generate computer choice
-function getComputerChoice (){ 
-  let cpuRandom;
-  let getChoice = Math.floor((Math.random() * 3) + 1);
-  if (getChoice === 1){
-    cpuRandom = 'rock';
-  }
-  else if (getChoice === 2){
-    cpuRandom = 'paper';
-  }
-  else if (getChoice === 3){
-    cpuRandom = 'scissors';
-  }
-return cpuRandom
-}
-
-let computerSelection = getComputerChoice ()
-
-//this function stores the conditional statements for win cases and tie case.
-function playRound (playerSelection,computerSelection){
-//defines the win cases for player.
-  if ((playerSelection === 'rock' && computerSelection === 'scissors')||(playerSelection === 'paper' && computerSelection === 'rock')||(playerSelection === 'scissors' && computerSelection === 'paper')){
-    alert('Player has scored!');
-    return ++playerScore
-  }
-//defines the win cases for computer.
-  else if ((playerSelection === 'rock' && computerSelection === 'paper')||(playerSelection === 'paper' && computerSelection === 'scissors')||(playerSelection === 'scissors' && computerSelection === 'rock')){
-    alert('Computer has scored...');
-    return ++computerScore
-  }
-//defines the tie case.
-  else if (playerSelection === computerSelection){
-    alert('The round is tied...');
-    return ++roundTie
-  } 
-}
-
-
-//initialize round loop counter to 5
-//make infinite loop until first to 3 wins
-function game(playerSelection){
-  while (false){
-    if (playerScore === 3 && playerScore > computerScore){
-      return alert('player has won!')
-    } else {
-      return alert ('computer has won!')
-    }
-    playerSelection = ''
-    i++
-  }
-}
 // function game(playerSelection){
 //   for (let i = 0; i < 5; i++){
 //     playerSelection = ''
@@ -71,12 +20,53 @@ function roundTally(computerScore, playerScore){
   }
 }
 
+//function to generate computer choice
+function getComputerChoice (computerChoice){ 
+  let getChoice = Math.floor((Math.random() * 3) + 1);
+  const computerSelection = document.querySelector('.computer-selection')
+  if (getChoice === 1){
+    computerSelection.textContent = 'Computer Selection: Rock'
+    computerChoice = 'Rock';
+  }
+  else if (getChoice === 2){
+    computerSelection.textContent = 'Computer Selection: Paper'
+    computerChoice = 'Paper';
+  }
+  else if (getChoice === 3){
+    computerSelection.textContent = 'Computer Selection: Scissors'
+    computerChoice = 'Scissors';
+  }
+    return computerChoice
+}
+console.log(getComputerChoice())
+
+function getScore(){
+  //defines the win cases for player.
+  let playerChoice = 'rock';
+  let computerChoice = 'paper';
+  if ((playerChoice === 'rock' && computerChoice === 'scissors')||(playerChoice === 'paper' && computerChoice === 'rock')||(playerChoice === 'scissors' && computerChoice === 'paper')){
+    alert('Player has scored!');
+    const playerScore = document.querySelector('.player-score');
+    const span = document.createElement('span').textContent = '1'
+    playerScore.append(span)
+  }
+  //defines the win cases for computer.
+  else if ((playerChoice === 'rock' && computerChoice === 'paper')||(playerChoice === 'paper' && computerChoice === 'scissors')||(playerChoice === 'scissors' && computerChoice === 'rock')){
+    alert('Computer has scored...');
+    const computerScore = document.querySelector('.computer-score');
+    const span = document.createElement('span').textContent = '1'
+    computerScore.append(span)
+  }
+  //defines the tie case.
+  else if (playerChoice === computerChoice){
+    alert('The round is tied...');
+    return
+  } 
+ } getScore()
+  
 //target the buttons and make them each individually selectable
 const btnContainer = document.querySelector('#btn-container');
 
-btnContainer.addEventListener('click', getSelection)
 
-function getSelection (evt) {
-  const span = document.querySelector('span')
-  span.textContent = `Player Selection: ${evt.target.dataset.select}`;
-}
+
+
