@@ -61,6 +61,7 @@ function playRound (){
   } 
 }
 
+
 //create onload function that makes the fade in div work when the document is opened
 //create an arithmetic function that adds the total of each box per win
 //create a function that loops the game until it is over which is a best 3 of 5
