@@ -59,8 +59,8 @@ html {
 #selection-box {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  flex-wrap: wrap;
   width: 200px;
   height: 50px;
   margin: auto;
@@ -69,12 +69,12 @@ html {
   border-color: rgba(131, 50, 50, 0.911);
 }
 .player-selection {
-  font-size: large;
+  font-size: medium;
   margin: auto;
   color: rgba(131, 50, 50, 0.911);
 }
 .computer-selection {
-  font-size: large;
+  font-size: medium;
   margin: auto;
   color: rgba(131, 50, 50, 0.911);
 }

@@ -8,13 +8,20 @@ function getComputerChoice (){
   let cpuRandom;
   let getChoice = Math.floor((Math.random() * 3) + 1);
   if (getChoice === 1){
-    cpuRandom = 'rock';
+    cpuRandom = 'Rock';
+    //select the span I would like to add the text in
+    const computerText = document.querySelector('.computer-text')
+    computerText.textContent = `Computer selection: ${cpuRandom}`;
   }
   else if (getChoice === 2){
-    cpuRandom = 'paper';
+    cpuRandom = 'Paper';
+    const computerText = document.querySelector('.computer-text')
+    computerText.textContent = `Computer selection: ${cpuRandom}`;
   }
   else if (getChoice === 3){
-    cpuRandom = 'scissors';
+    cpuRandom = 'Scissors';
+    const computerText = document.querySelector('.computer-text')
+    computerText.textContent = `Computer selection: ${cpuRandom}`;
   }
 return cpuRandom
 }
@@ -24,6 +31,8 @@ const btnContainer = document.querySelector('#btn-container');
 btnContainer.addEventListener('click', getSelection)
 
 function getSelection (evt) {
+  const playerText = document.querySelector('.player-text');
+  playerText.textContent = `Player Selection: ${evt.target.dataset.selected}`;
   playerSelection = evt.target.dataset.selected;
   playRound()
 }
@@ -34,13 +43,13 @@ function getSelection (evt) {
 function playRound (){
   computerSelection = getComputerChoice()
   //defines the win cases for player.
-  if ((playerSelection === 'rock' && computerSelection === 'scissors')||(playerSelection === 'paper' && computerSelection === 'rock')||(playerSelection === 'scissors' && computerSelection === 'paper')){
+  if ((playerSelection === 'Rock' && computerSelection === 'Scissors')||(playerSelection === 'Paper' && computerSelection === 'Rock')||(playerSelection === 'Scissors' && computerSelection === 'Paper')){
     const playerScore = document.querySelector('.player-score')
     const span = document.createElement('span').textContent = '1'
     playerScore.append(span)
   }
 //defines the win cases for computer.
-  else if ((playerSelection === 'rock' && computerSelection === 'paper')||(playerSelection === 'paper' && computerSelection === 'scissors')||(playerSelection === 'scissors' && computerSelection === 'rock')){
+  else if ((playerSelection === 'Rock' && computerSelection === 'Paper')||(playerSelection === 'Paper' && computerSelection === 'Scissors')||(playerSelection === 'Scissors' && computerSelection === 'Rock')){
     const computerScore = document.querySelector('.computer-score')
     const span = document.createElement('span').textContent = '1'
     computerScore.append(span)
@@ -52,5 +61,6 @@ function playRound (){
   } 
 }
 
-
-
+//create onload function that makes the fade in div work when the document is opened
+//create an arithmetic function that adds the total of each box per win
+//create a function that loops the game until it is over which is a best 3 of 5
