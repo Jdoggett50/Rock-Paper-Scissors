@@ -3,70 +3,54 @@ let roundTie = 0;
 let playerScore = 0;
 let computerScore = 0;
 
-// function game(playerSelection){
-//   for (let i = 0; i < 5; i++){
-//     playerSelection = ''
-//     computerSelection = getComputerChoice ()
-//     playRound(playerSelection.toLowerCase(),computerSelection)
-//   }
-// }  
-
-function roundTally(computerScore, playerScore){
-  if (computerScore > playerScore){
-    return alert('computer has won!')
-  }
-  else if (playerScore > computerScore){
-    return alert('player has won!')
-  }
-}
-
 //function to generate computer choice
-function getComputerChoice (computerChoice){ 
+function getComputerChoice (){ 
+  let cpuRandom;
   let getChoice = Math.floor((Math.random() * 3) + 1);
-  const computerSelection = document.querySelector('.computer-selection')
   if (getChoice === 1){
-    computerSelection.textContent = 'Computer Selection: Rock'
-    computerChoice = 'Rock';
+    cpuRandom = 'rock';
   }
   else if (getChoice === 2){
-    computerSelection.textContent = 'Computer Selection: Paper'
-    computerChoice = 'Paper';
+    cpuRandom = 'paper';
   }
   else if (getChoice === 3){
-    computerSelection.textContent = 'Computer Selection: Scissors'
-    computerChoice = 'Scissors';
+    cpuRandom = 'scissors';
   }
-    return computerChoice
+return cpuRandom
 }
-console.log(getComputerChoice())
 
-function getScore(){
+// target the buttons and make them each individually selectable
+const btnContainer = document.querySelector('#btn-container');
+btnContainer.addEventListener('click', getSelection)
+
+function getSelection (evt) {
+  playerSelection = evt.target.dataset.selected;
+  playRound()
+}
+
+
+
+//this function stores the conditional statements for win cases and tie case.
+function playRound (){
+  computerSelection = getComputerChoice()
   //defines the win cases for player.
-  let playerChoice = 'rock';
-  let computerChoice = 'paper';
-  if ((playerChoice === 'rock' && computerChoice === 'scissors')||(playerChoice === 'paper' && computerChoice === 'rock')||(playerChoice === 'scissors' && computerChoice === 'paper')){
-    alert('Player has scored!');
-    const playerScore = document.querySelector('.player-score');
+  if ((playerSelection === 'rock' && computerSelection === 'scissors')||(playerSelection === 'paper' && computerSelection === 'rock')||(playerSelection === 'scissors' && computerSelection === 'paper')){
+    const playerScore = document.querySelector('.player-score')
     const span = document.createElement('span').textContent = '1'
     playerScore.append(span)
   }
-  //defines the win cases for computer.
-  else if ((playerChoice === 'rock' && computerChoice === 'paper')||(playerChoice === 'paper' && computerChoice === 'scissors')||(playerChoice === 'scissors' && computerChoice === 'rock')){
-    alert('Computer has scored...');
-    const computerScore = document.querySelector('.computer-score');
+//defines the win cases for computer.
+  else if ((playerSelection === 'rock' && computerSelection === 'paper')||(playerSelection === 'paper' && computerSelection === 'scissors')||(playerSelection === 'scissors' && computerSelection === 'rock')){
+    const computerScore = document.querySelector('.computer-score')
     const span = document.createElement('span').textContent = '1'
     computerScore.append(span)
   }
-  //defines the tie case.
-  else if (playerChoice === computerChoice){
+//defines the tie case.
+  else if (playerSelection === computerSelection){
+    //make this a smirk faced box later
     alert('The round is tied...');
-    return
   } 
- } getScore()
-  
-//target the buttons and make them each individually selectable
-const btnContainer = document.querySelector('#btn-container');
-
+}
 
 
 
