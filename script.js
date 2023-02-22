@@ -1,7 +1,6 @@
-//variables for playRound function
 let roundTie = 0;
-let playerScore = 0;
-let computerScore = 0;
+let playerTally = 1;
+let computerTally = 1;
 
 //function to generate computer choice
 function getComputerChoice (){ 
@@ -29,14 +28,13 @@ return cpuRandom
 // target the buttons and make them each individually selectable
 const btnContainer = document.querySelector('#btn-container');
 btnContainer.addEventListener('click', getSelection)
-
 function getSelection (evt) {
   const playerText = document.querySelector('.player-text');
   playerText.textContent = `Player Selection: ${evt.target.dataset.selected}`;
   playerSelection = evt.target.dataset.selected;
   playRound()
+  getWinner()
 }
-
 
 
 //this function stores the conditional statements for win cases and tie case.
@@ -44,24 +42,27 @@ function playRound (){
   computerSelection = getComputerChoice()
   //defines the win cases for player.
   if ((playerSelection === 'Rock' && computerSelection === 'Scissors')||(playerSelection === 'Paper' && computerSelection === 'Rock')||(playerSelection === 'Scissors' && computerSelection === 'Paper')){
-    const playerScore = document.querySelector('.player-score')
-    const span = document.createElement('span').textContent = '1'
-    playerScore.append(span)
+    const spanContent = document.querySelector('.player-score').textContent = `${playerTally}`
+    return ++playerTally
   }
 //defines the win cases for computer.
   else if ((playerSelection === 'Rock' && computerSelection === 'Paper')||(playerSelection === 'Paper' && computerSelection === 'Scissors')||(playerSelection === 'Scissors' && computerSelection === 'Rock')){
-    const computerScore = document.querySelector('.computer-score')
-    const span = document.createElement('span').textContent = '1'
-    computerScore.append(span)
+    const spanContent = document.querySelector('.computer-score').textContent = `${computerTally}`
+    return ++computerTally
   }
 //defines the tie case.
   else if (playerSelection === computerSelection){
     //make this a smirk faced box later
     alert('The round is tied...');
-  } 
+  }
 }
 
+function getWinner(){
+  if (playerTally == 4){
+    alert ('player has won!')
+  } else if (computerTally == 4){
+    alert ('computer has won!')
+  }
+}
 
 //create onload function that makes the fade in div work when the document is opened
-//create an arithmetic function that adds the total of each box per win
-//create a function that loops the game until it is over which is a best 3 of 5
